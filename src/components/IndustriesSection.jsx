@@ -3,6 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import general from "../assets/general-cleaning.png";
+import cleaning from "../assets/health-cleaning.png";
+import deep from "../assets/deep-cleaning.png";
+import high from "../assets/disinfection.png";
+import wall from "../assets/wall.png";
 
 const IndustriesSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -10,27 +15,52 @@ const IndustriesSection = () => {
   const services = [
     {
       title: "General Commercial Cleaning",
-      image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=80&w=600",
+      image: general,
       link: "Discover More"
     },
     {
       title: "Cleaning for Health",
-      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600",
+      image: cleaning,
       link: "Discover More"
     },
     {
       title: "Deep Cleaning",
-      image: "https://images.unsplash.com/photo-1581578731522-5b174716915f?auto=format&fit=crop&q=80&w=600",
+      image: deep,
       link: "Discover More"
     },
     {
       title: "High-Touch Point Disinfection",
-      image: "https://images.unsplash.com/photo-1584622781564-1d9876a13d00?auto=format&fit=crop&q=80&w=600",
+      image: high,
       link: "Discover More"
     },
     {
       title: "Wall & Window",
-      image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&q=80&w=600",
+      image: wall,
+      link: "Discover More"
+    },
+    {
+      title: "General Commercial Cleaning",
+      image: general,
+      link: "Discover More"
+    },
+    {
+      title: "Cleaning for Health",
+      image: cleaning,
+      link: "Discover More"
+    },
+    {
+      title: "Deep Cleaning",
+      image: deep,
+      link: "Discover More"
+    },
+    {
+      title: "High-Touch Point Disinfection",
+      image: high,
+      link: "Discover More"
+    },
+    {
+      title: "Wall & Window",
+      image: wall,
       link: "Discover More"
     }
   ];
@@ -94,9 +124,10 @@ const IndustriesSection = () => {
           background-color: #FFFFFF;
           padding: 100px 0;
           width: 100%;
+          position: relative;
         }
 
-        .carousel-wrapper {
+        .industries-carousel-section .carousel-wrapper {
           position: relative;
           max-width: 1600px; /* INCREASED FOR 5 CARDS */
           margin: 0 auto;
@@ -104,7 +135,7 @@ const IndustriesSection = () => {
         }
 
         .industries-swiper {
-          padding: 40px 0 80px 0 !important;
+          padding: 40px 0 100px 0 !important;
         }
 
         .industry-card {
@@ -112,8 +143,6 @@ const IndustriesSection = () => {
           height: 380px;
           background: white;
           border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
           transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
           display: flex;
           flex-direction: column;
@@ -121,10 +150,8 @@ const IndustriesSection = () => {
           transform-origin: center bottom;
         }
 
-        /* Active card is taller and has more shadow */
         .industry-card.active {
           height: 480px;
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
           z-index: 10;
           transform: scale(1.05);
         }
@@ -141,16 +168,18 @@ const IndustriesSection = () => {
           opacity: 1;
         }
 
-        .card-image-container {
+        .industry-card .card-image-container {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
           z-index: 1;
+          border-radius: 20px;
+          overflow: hidden;
         }
 
-        .card-image {
+        .industry-card .card-image {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -161,51 +190,52 @@ const IndustriesSection = () => {
           transform: scale(1.1);
         }
 
-        .card-footer {
+        .industry-card .card-footer {
           position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
+          bottom: -45px; /* HANGING EVEN FURTHER OFF BOTTOM */
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80%; /* EVEN NARROWER */
           background: white;
-          padding: 24px 20px;
-          z-index: 2;
-          min-height: 100px;
+          padding: 20px 15px 5px 15px; /* REDUCED BOTTOM PADDING */
+          z-index: 1;
+          min-height: 90px;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
+          justify-content: flex-end; /* PUSH TEXT TO BOTTOM */
+          align-items: center;
+          border-radius: 15px;
         }
 
-        .service-title {
+        .industry-card .service-title {
           color: #1A1A2E;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 700;
           line-height: 1.3;
-          margin: 0 0 8px 0;
-          text-align: left;
+          margin: 0 0 10px 0;
+          text-align: center;
         }
 
         .industry-card.active .service-title {
           font-size: 18px;
         }
 
-        .discover-link {
-          color: #3399FF;
+        .industry-card .discover-link {
+          color: #000000; /* CHANGED TO BLACK */
           font-size: 14px;
           text-decoration: none;
           font-weight: 600;
-          text-align: left;
+          text-align: center;
           display: inline-block;
           transition: color 0.3s ease;
         }
 
-        .discover-link:hover {
-          color: #2688EE;
+        .industry-card .discover-link:hover {
+          color: #333333;
           text-decoration: underline;
         }
 
-        .cta-button {
+        .industry-card .cta-button {
           background-color: #3399FF;
           color: white;
           border: none;
@@ -228,15 +258,15 @@ const IndustriesSection = () => {
         .custom-pagination-container {
           display: flex;
           justify-content: center;
-          gap: 12px;
-          margin-top: 10px;
+          gap: 15px;
+          margin-top: 50px; /* MORE SPACE FROM CARDS */
         }
 
         :global(.pagination-dot) {
-          width: 12px;
-          height: 12px;
+          width: 14px;
+          height: 14px;
           border-radius: 50%;
-          border: 1.5px solid #CCCCCC !important;
+          border: 2px solid #CCCCCC !important;
           background: transparent !important;
           transition: all 0.3s ease;
           cursor: pointer;
@@ -244,9 +274,15 @@ const IndustriesSection = () => {
           opacity: 1 !important;
         }
 
+        :global(.pagination-dot:hover) {
+          border-color: #2ECC71 !important;
+          transform: scale(1.2);
+        }
+
         :global(.pagination-dot.active) {
           background-color: #2ECC71 !important;
           border-color: #2ECC71 !important;
+          transform: scale(1.1);
         }
 
         @media (max-width: 1024px) {
