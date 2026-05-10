@@ -393,8 +393,16 @@ const ProblemsSection = () => {
           .main-image-2 { width: 140px; height: 160px; right: -10px; bottom: -10px; }
           .logo-card { width: 60px; height: 160px; left: -5px; }
           .problems-grid { grid-template-columns: 1fr; padding-top: 4rem; }
-          .main-heading { font-size: 2rem; }
-          .feature-grid { grid-template-columns: 1fr; }
+          .text-content-column {
+            height: auto;
+            gap: 2rem;
+          }
+          .main-heading { font-size: 2rem; margin-bottom: 2rem; }
+          .feature-grid { 
+            grid-template-columns: 1fr; 
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+          }
         }
       `}</style>
     </section>
