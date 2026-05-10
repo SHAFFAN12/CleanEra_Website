@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Phone, Mail, ChevronDown, Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
 import phone from "../assets/phone-call.png"
+import emailIcon from "../assets/email.png"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,12 +17,11 @@ const Navbar = () => {
 
           <div className="nav-contact-center">
             <a href="tel:2892079500" className="contact-link">
-              <Phone size={18} className="icon
--green" />
+              <img src={phone}  className="icon-green" />
               <span>289-207-9500</span>
             </a>
             <a href="mailto:support@getcleanera.com" className="contact-link">
-              <Mail size={18} className="icon-green" />
+              <img src={emailIcon} className="icon-green" />
               <span>support@getcleanera.com</span>
             </a>
           </div>
@@ -55,10 +55,13 @@ const Navbar = () => {
 
       <style jsx>{`
         .navbar-fixed {
-          background: #fff;
+          position: fixed;
+          top: 0;
+          left: 0;
           width: 100%;
+          background: #fff;
           z-index: 1000;
-          padding: 1rem 0;
+          padding: 0.5rem 0;
           border-bottom: 1px solid #eef2f6;
           box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
@@ -90,13 +93,21 @@ const Navbar = () => {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          color: #1E293B;
+          color: #145D8D;
           font-weight: 600;
           font-size: 0.95rem;
           transition: color 0.3s ease;
         }
         .contact-link:hover { color: #4CAF50; }
-        .icon-green { color: #4CAF50; }
+        .icon-green { 
+          color: #4CAF50; 
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        }
+        img.icon-green {
+          filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1352%) hue-rotate(114deg) brightness(97%) contrast(101%);
+        }
 
         /* Button Styling */
         .btn-blue {
@@ -159,7 +170,8 @@ const Navbar = () => {
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
           }
           .nav-bottom-row.mobile-open {
-            display: block;
+            display: block !important;
+            z-index: 1001;
           }
           .nav-links-center {
             flex-direction: column;

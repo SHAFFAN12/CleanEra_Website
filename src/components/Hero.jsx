@@ -10,13 +10,12 @@ import InsureIcon from '../assets/insured.png';
 
 const Hero = () => {
   const trustBadges = [
-    { title: "WSIB Compliant", icon: <img src={wsibIcon} alt="WSIB" className="w-8 h-8" />, color: "bg-blue-50" },
-    { title: "Flexible Scheduling", icon: <img src={flexibleIcon} alt="WSIB" className="w-8 h-8" />, color: "bg-green-50" },
-    { title: "Insured & Bonded", icon: <img src={InsureIcon} alt="WSIB" className="w-8 h-8" />, color: "bg-yellow-50" },
-     { title: "WSIB Compliant", icon: <img src={wsibIcon} alt="WSIB" className="w-8 h-8" />, color: "bg-blue-50" },
-    { title: "Flexible Scheduling", icon: <img src={flexibleIcon} alt="WSIB" className="w-8 h-8" />, color: "bg-green-50" },
-    { title: "Insured & Bonded", icon: <img src={InsureIcon} alt="WSIB" className="w-8 h-8" />, color: "bg-yellow-50" },
-    
+    { title: "WSIB Compliant", icon: <img src={wsibIcon} alt="WSIB" className="w-12 h-12" />  },
+    { title: "Flexible Scheduling", icon: <img src={flexibleIcon} alt="Flexible" className="w-12 h-12" />},
+    { title: "Insured & Bonded", icon: <img src={InsureIcon} alt="Insured" className="w-12 h-12" />},
+    { title: "WSIB Compliant", icon: <img src={wsibIcon} alt="WSIB" className="w-12 h-12" />},
+    { title: "Flexible Scheduling", icon: <img src={flexibleIcon} alt="Flexible" className="w-12 h-12" />},
+    { title: "Insured & Bonded", icon: <img src={InsureIcon} alt="Insured" className="w-12 h-12" />},
   ];
 
   return (
@@ -47,7 +46,6 @@ const Hero = () => {
             modules={[Pagination, Autoplay]}
             style={{
               "--swiper-pagination-color": "#22c55e",
-              "--swiper-navigation-color": "#22c55e",
             }}
             spaceBetween={30}
             slidesPerView={1}
@@ -194,12 +192,12 @@ const Hero = () => {
         }
         .badge-inner {
           background: #fff;
-          padding: 1.5rem 2rem;
+          padding: 1.5rem 1.5rem;
           border-radius: 20px;
           box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
           display: flex;
           align-items: center;
-          gap: 1.5rem;
+          gap: 0.5rem;
           border: 1px solid #dcfce7; /* Subtle green border */
           width: 100%;
           justify-content: flex-start;
@@ -209,7 +207,7 @@ const Hero = () => {
           transform: translateY(-5px);
         }
         .badge-icon-box {
-          padding: 1rem;
+          padding: 0.5rem;
           border-radius: 15px;
           display: flex;
           align-items: center;
@@ -249,33 +247,46 @@ const Hero = () => {
           bottom: 2rem !important;
         }
         :global(.swiper-pagination-bullet) {
-          background: #dcfce7 !important; /* Light green for inactive */
+          background: transparent !important;
+          background-color: transparent !important;
           opacity: 1 !important;
-          width: 12px !important;
-          height: 12px !important;
-          margin: 0 8px !important;
-          border: 2px solid #bbf7d0;
-          transition: all 0.3s ease;
+          width: 10px !important;
+          height: 10px !important;
+          margin: 0 5px !important;
+          border: 1px solid #22c55e !important;
+          box-sizing: border-box !important;
+          display: inline-block !important;
         }
         :global(.swiper-pagination-bullet-active) {
-          background: #22c55e !important; /* Stronger green for active */
-          width: 14px !important;
-          height: 14px !important;
-          transform: scale(1.2);
-          border-color: #16a34a;
+          background: #22c55e !important;
+          background-color: #22c55e !important;
+          border-color: #22c55e !important;
         }
 
         @media (max-width: 768px) {
+          .hero-curved-box {
+            height: auto;
+            min-height: 500px;
+            padding-top: 40px;
+          }
+          .hero-content-centered {
+            padding-top: 0;
+          }
           .floating-trust-card {
-            padding: 3rem 1rem;
-            border-radius: 40px;
+            width: 96%;
+            padding: 0.5rem 1rem 1rem;
+            border-radius: 30px;
+          }
+          :global(.trust-swiper) {
+            padding-top: 0.5rem !important;
+            padding-bottom: 3.5rem !important;
           }
           .badge-inner {
-            padding: 1.2rem;
-            gap: 1rem;
+            padding: 0.8rem;
+            gap: 0.5rem;
           }
-          .heading-top { font-size: 2rem; }
-          .heading-bottom { font-size: 2.5rem; }
+          .heading-top { font-size: 1.6rem; }
+          .heading-bottom { font-size: 2rem; }
         }
       `}</style>
     </section>

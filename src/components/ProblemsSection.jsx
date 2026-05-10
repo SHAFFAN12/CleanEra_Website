@@ -364,20 +364,36 @@ const ProblemsSection = () => {
         }
 
         @media (max-width: 768px) {
+          .problems-section {
+            padding-top: 0rem;
+            padding-bottom: 5rem;
+          }
+          .ticker-wrapper {
+            padding: 0.5rem 0;
+            margin-bottom: 2rem;
+          }
+          .ticker-item {
+            font-size: 2.5rem;
+            margin-right: 2rem;
+            gap: 1rem;
+          }
+          .ticker-star {
+            font-size: 1.2rem;
+          }
           .image-collage-column {
             height: auto;
             justify-content: center;
             transform: scale(1);
-            margin-bottom: 6rem;
+            margin-bottom: 4rem;
           }
           .collage-container {
-            max-width: 350px;
+            max-width: 320px;
           }
-          .main-image-1 { width: 300px; height: 400px; }
-          .main-image-2 { width: 150px; height: 180px; right: -20px; bottom: -20px; }
-          .logo-card { width: 70px; height: 200px; left: -10px; }
-          .problems-grid { grid-template-columns: 1fr; }
-          .main-heading { font-size: 2.2rem; }
+          .main-image-1 { width: 280px; height: 350px; }
+          .main-image-2 { width: 140px; height: 160px; right: -10px; bottom: -10px; }
+          .logo-card { width: 60px; height: 160px; left: -5px; }
+          .problems-grid { grid-template-columns: 1fr; padding-top: 4rem; }
+          .main-heading { font-size: 2rem; }
           .feature-grid { grid-template-columns: 1fr; }
         }
       `}</style>
