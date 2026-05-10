@@ -24,11 +24,11 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="section-padding">
+    <section className="faq-section">
       <div className="container">
         <div className="section-header text-center mb-12">
-          <h2>Frequently Asked <span className="text-accent">Questions</span></h2>
-          <p className="mt-2 text-muted">Still need help? <a href="#contact" className="text-accent font-bold">Get Help Now</a></p>
+          <h2 className="faq-title">Frequently Asked Questions</h2>
+          <p className="mt-2 text-muted">Still need help? <a href="#contact" className="help-link">Get Help Now</a></p>
         </div>
 
         <div className="faq-container">
@@ -47,13 +47,37 @@ const FAQSection = () => {
       </div>
 
       <style jsx>{`
+        .faq-section {
+          padding: 100px 0;
+          background-color: #FFFFFF;
+        }
+        .faq-title {
+          font-size: 52px;
+          font-weight: 800;
+          color: #111111;
+          margin-bottom: 24px;
+        }
+        .help-link {
+          color: #3399FF;
+          font-weight: 700;
+          text-decoration: underline;
+          transition: color 0.3s ease;
+        }
+        .help-link:hover {
+          color: #2688EE;
+        }
         .faq-container {
           max-width: 800px;
           margin: 0 auto;
         }
         .faq-item {
-          border-bottom: 1px solid #eee;
-          margin-bottom: 1rem;
+          margin-bottom: 8px;
+          transition: all 0.3s ease;
+          border-radius: 12px;
+          padding: 0 24px;
+        }
+        .faq-item.open {
+          background-color: #F8F9FA;
         }
         .faq-question {
           width: 100%;
@@ -84,6 +108,12 @@ const FAQSection = () => {
         }
         .text-muted { color: var(--text-muted); }
         .font-bold { font-weight: 700; }
+
+        @media (max-width: 768px) {
+          .faq-title {
+            font-size: 32px;
+          }
+        }
       `}</style>
     </section>
   );
