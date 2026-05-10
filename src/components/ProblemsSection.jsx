@@ -368,6 +368,9 @@ const ProblemsSection = () => {
             padding-top: 0rem;
             padding-bottom: 5rem;
           }
+          .content-wrapper {
+            padding: 0 1.5rem;
+          }
           .ticker-wrapper {
             padding: 0.5rem 0;
             margin-bottom: 2rem;
@@ -402,6 +405,25 @@ const ProblemsSection = () => {
             grid-template-columns: 1fr; 
             gap: 1.2rem;
             margin-bottom: 3rem;
+          }
+          .peace-hand-icon {
+            left: -20px;
+            top: 40px;
+            width: 70px;
+            height: 70px;
+            z-index: 0;
+            opacity: 0.4;
+          }
+          .spray-bottle-icon {
+            right: -20px;
+            top: 450px;
+            width: 90px;
+            height: 90px;
+            z-index: 0;
+            opacity: 0.4;
+          }
+          .soap-foam-icon {
+            display: none;
           }
         }
       `}</style>
