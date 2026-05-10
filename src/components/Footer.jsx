@@ -1,8 +1,10 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+
 import logo from '../assets/footer-logo.png';
 import clock from "../assets/clock.png"
-
+import phone from "../assets/phone-call.png"
+import email from "../assets/email.png"
+import location from "../assets/location.png"
 const Footer = () => {
   return (
     <footer className="footer-main">
@@ -28,15 +30,15 @@ const Footer = () => {
               <img src={logo} alt="CleanEra Logo" className="footer-logo" />
               <ul className="footer-contact">
                 <li>
-                  <Phone size={15} className="contact-icon" />
+                  <img src={phone} className="contact-icon-img" />
                   <span>416-207-9500</span>
                 </li>
                 <li>
-                  <Mail size={15} className="contact-icon" />
+                  <img src={email} className="contact-icon-img" />
                   <span>support@getcleanera.com</span>
                 </li>
                 <li>
-                  <MapPin size={15} className="contact-icon" />
+                  <img src={location} className="contact-icon-img" />
                   <span>Suite 750, Robert Speck Parkway</span>
                 </li>
               </ul>
