@@ -6,6 +6,7 @@ import ServicesSection from './components/ServicesSection';
 import IndustriesSection from './components/IndustriesSection';
 import WhyUsSection from './components/WhyUsSection';
 import OnboardingSection from './components/OnboardingSection';
+import OnboardingProcess from './components/OnboardingProcess';
 import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
 import CTASection from './components/CTASection';
@@ -22,6 +23,7 @@ function App() {
         <IndustriesSection />
         <WhyUsSection />
         <OnboardingSection />
+        <OnboardingProcess />
         <TestimonialsSection />
         <FAQSection />
         <CTASection />

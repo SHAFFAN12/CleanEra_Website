@@ -155,7 +155,7 @@ const Hero = () => {
           padding: 1.2rem 3rem;
           font-size: 1.2rem;
           font-weight: 700;
-          border-radius: 12px;
+          border-radius: 6px;
           box-shadow: 0 10px 25px rgba(51, 153, 255, 0.4);
           transition: all 0.3s ease;
         }
@@ -229,7 +229,7 @@ const Hero = () => {
           background-color: #001A33;
           color: white;
           padding: 1rem 3.5rem;
-          border-radius: 12px;
+          border-radius: 6px;
           font-weight: 700;
           font-size: 1.05rem;
           transition: all 0.3s ease;
