@@ -85,7 +85,7 @@ const CTASection = () => {
         }
 
         .btn-request {
-          background-color: #59B891;
+          background-color: #60BF91;
           color: white;
           padding: 14px 32px;
           border-radius: 8px;

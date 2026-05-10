@@ -1,33 +1,48 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Link, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import logo from '../assets/footer-logo.png';
+import clock from "../assets/clock.png"
 
 const Footer = () => {
   return (
     <footer className="footer-main">
-      {/* Hanging Circle CTA */}
+      {/* CTA Circle Badge */}
       <div className="cta-circle-wrapper">
-        <div className="cta-circle">
-          <div className="cta-circle-content">
-            <span className="cta-circle-text">Request a Tailored <br /> Cleaning Plan</span>
+        <div className="cta-circle-container">
+          {/* Layer 1: White circle with text */}
+          <div className="cta-circle-white">
+            <span className="cta-circle-text">Request a Tailored<br />Cleaning Plan</span>
           </div>
+          {/* Layer 2: Gradient border circle — transparent center, sits on top */}
+          <div className="cta-circle-border"></div>
         </div>
       </div>
 
-      <div className="footer-content bg-navy text-white">
+      {/* Main Footer Body */}
+      <div className="footer-body">
         <div className="container">
           <div className="footer-grid">
-            {/* Brand & Contact */}
+
+            {/* Column 1: Logo + Contact */}
             <div className="footer-col">
-              <img src={logo} alt="CleanEra Logo" className="footer-logo mb-6" />
+              <img src={logo} alt="CleanEra Logo" className="footer-logo" />
               <ul className="footer-contact">
-                <li><Phone size={16} className="contact-icon" /> 416-207-9500</li>
-                <li><Mail size={16} className="contact-icon" /> support@getcleanera.com</li>
-                <li><MapPin size={16} className="contact-icon" /> Suite 750, Robert Speck Parkway</li>
+                <li>
+                  <Phone size={15} className="contact-icon" />
+                  <span>416-207-9500</span>
+                </li>
+                <li>
+                  <Mail size={15} className="contact-icon" />
+                  <span>support@getcleanera.com</span>
+                </li>
+                <li>
+                  <MapPin size={15} className="contact-icon" />
+                  <span>Suite 750, Robert Speck Parkway</span>
+                </li>
               </ul>
             </div>
 
-            {/* Quick Links */}
+            {/* Column 2: Quick Link */}
             <div className="footer-col">
               <h3 className="footer-col-title">Quick Link</h3>
               <ul className="footer-links">
@@ -40,7 +55,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Services */}
+            {/* Column 3: Services */}
             <div className="footer-col">
               <h3 className="footer-col-title">Services</h3>
               <ul className="footer-links">
@@ -49,140 +64,165 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Business Hours */}
+            {/* Column 4: Business Hours */}
             <div className="footer-col">
               <h3 className="footer-col-title">Business Hours</h3>
               <ul className="footer-hours">
                 <li>
-                  <Clock size={16} className="contact-icon" />
+                  <img src={clock} alt="clock" className="contact-icon-img" />
                   <span>Office: Monday - Friday 9 AM - 5 PM</span>
                 </li>
-                <li className="shift-right">Cleaning services available 24/7</li>
+                <li className="hours-plain">
+                  Cleaning services available 24/7
+                </li>
               </ul>
             </div>
-          </div>
 
-          <div className="footer-bottom">
-            <p className="copyright">Copyright © 2026. Design & Developed by Geeks Root.</p>
-            <div className="social-pills">
-              <a href="#" className="social-pill">
-                <Link size={14} /> <span>LinkedIn</span>
-              </a>
-              <a href="#" className="social-pill">
-                <Link size={14} /> <span>Facebook</span>
-              </a>
-              <a href="#" className="social-pill">
-                <Link size={14} /> <span>Instagram</span>
-              </a>
-            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="footer-bottom-bar">
+        <div className="container footer-bottom-inner">
+          <p className="copyright">Copyright © 2026. Design &amp; Developed by Geeks Root.</p>
+          <div className="social-pills">
+            <a href="#" className="social-pill">
+              <span className="social-icon">in</span>
+              <span>linkedin</span>
+            </a>
+            <a href="#" className="social-pill">
+              <span className="social-icon">f</span>
+              <span>facebook</span>
+            </a>
+            <a href="#" className="social-pill">
+              <span className="social-icon">@</span>
+              <span>instagram</span>
+            </a>
           </div>
         </div>
       </div>
 
       <style jsx>{`
+        /* ========= Footer Wrapper ========= */
         .footer-main {
           position: relative;
           margin-top: 100px;
         }
 
+        /* ========= CTA Circle Badge ========= */
         .cta-circle-wrapper {
           position: absolute;
-          top: -110px;
+          top: -90px;
           left: 50%;
           transform: translateX(-50%);
           z-index: 10;
         }
 
-        .cta-circle {
-          width: 220px;
-          height: 220px;
-          background: #FFFFFF;
+        /* Container — sized to white circle */
+        .cta-circle-container {
+          position: relative;
+          width: 180px;
+          height: 180px;
+        }
+
+        /* Layer 1: White circle with text */
+        .cta-circle-white {
+          position: absolute;
+          inset: 0;
           border-radius: 50%;
+          background: #FFFFFF;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 8px; /* For the gradient border effect */
-          position: relative;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Gradient Border Trick */
-        .cta-circle::before {
-          content: '';
-          position: absolute;
-          top: 0; right: 0; bottom: 0; left: 0;
-          border-radius: 50%;
-          padding: 6px; 
-          background: linear-gradient(135deg, #42B79A 0%, #1A6991 100%);
-          -webkit-mask: 
-             linear-gradient(#fff 0 0) content-box, 
-             linear-gradient(#fff 0 0);
-          -webkit-mask-composite: xor;
-          mask-composite: exclude;
-          pointer-events: none;
-        }
-
-        .cta-circle-content {
           text-align: center;
+          padding: 24px;
+          z-index: 1;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         }
 
         .cta-circle-text {
-          font-size: 18px;
-          font-weight: 800;
-          color: #1A1A2E;
+          font-size: 17px;
+          font-weight: 700;
+          color: #0D1B2A;
           line-height: 1.3;
           display: block;
         }
 
-        .footer-content {
-          background-color: #001A33; /* Deep Navy */
-          padding: 120px 0 30px;
+        /* Layer 2: Gradient border circle (larger, transparent inside) */
+        .cta-circle-border {
+          position: absolute;
+          top: -20px;
+          left: -20px;
+          right: -20px;
+          bottom: -20px;
+          border-radius: 50%;
+          z-index: 2;
+          pointer-events: none;
+          /* Smooth blend: green → teal */
+          background: conic-gradient(
+            from -90deg,
+            #2ECC71 0deg,
+            #1A6B8A 360deg
+          );
+          /* Mask: transparent center, show only outer 7px ring */
+          -webkit-mask: radial-gradient(
+            farthest-side,
+            transparent calc(100% - 8px),
+            black calc(100% - 7px)
+          );
+          mask: radial-gradient(
+            farthest-side,
+            transparent calc(100% - 8px),
+            black calc(100% - 7px)
+          );
+        }
+
+        /* ========= Main Footer Body ========= */
+        .footer-body {
+          background-color: #001B42;
+          padding: 110px 0 48px;
         }
 
         .footer-grid {
           display: grid;
-          grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-          gap: 40px;
-          margin-bottom: 60px;
+          grid-template-columns: 1.3fr 1fr 1.2fr 1.4fr;
+          gap: 50px;
+          margin-top: 40px;
         }
 
+        .footer-logo {
+          height: 60px;
+          width: auto;
+          margin-bottom: 28px;
+          display: block;
+        }
+
+        /* Column Headings */
         .footer-col-title {
           font-size: 18px;
           font-weight: 700;
           color: #FFFFFF;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
         }
 
-        .footer-logo {
-          height: 50px;
-          width: auto;
-          margin-bottom: 30px;
-        }
-
-        .footer-contact, .footer-links, .footer-hours {
+        /* Contact list */
+        .footer-contact {
           list-style: none;
           padding: 0;
           margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
         }
 
-        .footer-contact li, .footer-links li, .footer-hours li {
+        .footer-contact li {
           display: flex;
           align-items: flex-start;
-          gap: 12px;
-          margin-bottom: 16px;
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 14px;
+          gap: 8px;
+          color: #E0E0E0;
+          font-size: 15px;
           line-height: 1.5;
-        }
-
-        .footer-links a {
-          color: rgba(255, 255, 255, 0.8);
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-          color: #42B79A;
         }
 
         .contact-icon {
@@ -191,76 +231,134 @@ const Footer = () => {
           margin-top: 2px;
         }
 
-        .shift-right {
-          margin-left: 28px;
+        .contact-icon-img {
+          width: 15px;
+          height: 15px;
+          object-fit: contain;
+          flex-shrink: 0;
+          margin-top: 2px;
+          filter: brightness(0) invert(1); /* makes it white */
         }
 
-        .footer-bottom {
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding-top: 30px;
+        /* Nav links list */
+        .footer-links {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .footer-links a {
+          color: #D0D8E4;
+          font-size: 15px;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+          color: #2ECC71;
+        }
+
+        /* Hours list */
+        .footer-hours {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .footer-hours li {
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+          color: #D0D8E4;
+          font-size: 15px;
+          line-height: 1.5;
+        }
+
+        .hours-plain {
+          color: #D0D8E4;
+          font-size: 15px;
+          padding-left: 0;
+        }
+
+        /* ========= Bottom Bar ========= */
+        .footer-bottom-bar {
+          background-color: #001B42;
+          padding: 16px 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .footer-bottom-inner {
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
 
         .copyright {
-          font-size: 13px;
-          color: rgba(255, 255, 255, 0.6);
+          font-size: 14px;
+          color: #A0AABB;
+          margin: 0;
         }
 
+        /* Social pills */
         .social-pills {
           display: flex;
-          gap: 12px;
+          gap: 9px;
         }
 
         .social-pill {
-          background: rgba(255, 255, 255, 0.1);
-          color: white;
-          padding: 8px 18px;
-          border-radius: 50px;
-          font-size: 12px;
-          font-weight: 600;
-          text-decoration: none;
           display: flex;
           align-items: center;
-          gap: 8px;
-          transition: all 0.3s ease;
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          gap: 6px;
+          background: #284D83;
+          color: #FFFFFF;
+          font-size: 14px;
+          padding: 8px 16px;
+          border-radius: 22px;
+          text-decoration: none;
+          transition: background 0.3s ease;
+          height: 34px;
         }
 
         .social-pill:hover {
-          background: #42B79A;
-          transform: translateY(-2px);
+          background: #2ECC71;
+          color: #0A1628;
         }
 
+        .social-icon {
+          font-weight: 700;
+          font-size: 15px;
+        }
+
+        /* ========= Responsive ========= */
         @media (max-width: 1024px) {
           .footer-grid {
             grid-template-columns: 1fr 1fr;
-          }
-          .cta-circle {
-            width: 180px;
-            height: 180px;
-          }
-          .cta-circle-text {
-            font-size: 15px;
-          }
-          .cta-circle-wrapper {
-            top: -90px;
+            gap: 40px;
           }
         }
 
         @media (max-width: 640px) {
           .footer-grid {
             grid-template-columns: 1fr;
+            gap: 32px;
           }
-          .footer-bottom {
+          .footer-bottom-inner {
             flex-direction: column;
-            gap: 24px;
+            gap: 16px;
             text-align: center;
           }
           .social-pills {
             justify-content: center;
             flex-wrap: wrap;
+          }
+          .cta-circle-wrapper {
+            top: -90px;
           }
         }
       `}</style>
