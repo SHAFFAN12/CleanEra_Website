@@ -266,15 +266,20 @@ const Hero = () => {
         @media (max-width: 768px) {
           .hero-curved-box {
             height: auto;
-            min-height: 500px;
-            padding-top: 40px;
+            min-height: 600px;
+            padding-top: 120px; /* Clear fixed navbar */
+            padding-bottom: 40px;
           }
           .hero-content-centered {
             padding-top: 0;
+            margin-bottom: 20px;
+          }
+          .floating-card-container {
+            margin-top: -50px; /* Reduced negative margin to avoid covering CTA button */
           }
           .floating-trust-card {
             width: 96%;
-            padding: 0.5rem 1rem 1rem;
+            padding: 1.5rem 1rem 1rem;
             border-radius: 30px;
           }
           :global(.trust-swiper) {
@@ -285,8 +290,16 @@ const Hero = () => {
             padding: 0.8rem;
             gap: 0.5rem;
           }
-          .heading-top { font-size: 1.6rem; }
-          .heading-bottom { font-size: 2rem; }
+          .heading-top { font-size: 1.8rem; }
+          .heading-bottom { font-size: 2.2rem; }
+          .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+          }
+          .btn-light-blue {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+          }
         }
       `}</style>
     </section>
