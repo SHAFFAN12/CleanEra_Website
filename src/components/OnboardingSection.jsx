@@ -235,10 +235,9 @@ const OnboardingSection = () => {
           top: -100px;
           right: -200px;
           width: 300px;
-          opacity: 0.04;
+          opacity: 1;
           pointer-events: none;
           z-index: 1;
-          filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(107%);
         }
 
         @media (max-width: 1100px) {
