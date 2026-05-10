@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';

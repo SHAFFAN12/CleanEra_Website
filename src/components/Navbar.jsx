@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
 import phone from "../assets/phone-call.png"
 import emailIcon from "../assets/email.png"
