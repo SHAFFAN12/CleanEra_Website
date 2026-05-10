@@ -87,7 +87,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="footer-bottom-bar">
         <div className="container footer-bottom-inner">
-          <p className="copyright">Copyright © 2026. Design &amp; Developed by Geeks Root.</p>
+          <p className="copyright">Copyright © 2026. Design &amp; Developed by Muhammad Shaffan.</p>
           <div className="social-pills">
             <a href="#" className="social-pill">
               <span className="social-icon">in</span>
