@@ -318,21 +318,23 @@ const ServicesSection = () => {
           .navy-banner {
             width: 100%;
             border-radius: 0;
-            height: 280px; /* Increased from 200px */
-            padding: 40px 30px;
+            height: 380px; /* Increased height */
+            padding: 50px 30px;
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Keep text at the top */
           }
           .banner-title {
             font-size: 32px;
             line-height: 1.1;
           }
           .cards-slider-wrapper {
-            margin-top: 20px;
+            margin-top: -120px; /* Move cards up into the banner area */
+            padding: 0 15px;
           }
           .nav-arrows {
             padding: 0 20px;
-            justify-content: center;
+            justify-content: flex-end; /* Align arrows to the right */
+            margin-bottom: 20px;
           }
         }
       `}</style>

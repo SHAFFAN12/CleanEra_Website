@@ -139,50 +139,50 @@ const CTASection = () => {
         }
 
         @media (max-width: 1024px) {
+          .cta-section { padding: 40px 0; }
           .cta-card {
-            padding: 50px;
+            padding: 40px 20px;
             flex-direction: column;
             text-align: center;
             min-height: auto;
           }
           .cta-content {
             max-width: 100%;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+          }
+          .cta-heading {
+            color: #0A1628; /* DARK COLOR FOR MOBILE CONTRAST */
+            font-size: 32px;
+            margin-bottom: 15px;
           }
           .cta-description {
-            margin: 0 auto 32px;
+            color: #1A1A2E;
+            margin: 0 auto 30px;
+            font-size: 15px;
           }
           .cta-buttons {
             justify-content: center;
+            margin-bottom: 30px;
           }
           .cta-image-box {
             position: relative;
             right: auto;
             bottom: auto;
-            width: 300px;
-            margin: 0 auto -90px;
+            width: 280px;
+            margin: 0 auto -40px; /* REDUCED OVERLAP */
           }
           .boy-image {
             transform: translateY(0);
           }
-          .cta-heading {
-            font-size: 36px;
-          }
         }
 
         @media (max-width: 640px) {
-          .cta-card {
-            padding: 40px 24px;
-          }
-          .cta-heading {
-            font-size: 32px;
-          }
-          .cta-buttons {
-            flex-direction: column;
-          }
-          .btn-request, .btn-book {
-            width: 100%;
-          }
+          .cta-heading { font-size: 28px; }
+          .cta-buttons { flex-direction: column; gap: 12px; }
+          .btn-request, .btn-book { width: 100%; }
+          .cta-image-box { width: 240px; }
+          .cta-footer-text { margin-top: 60px; } /* ADDED SPACE AFTER IMAGE */
         }
 
         .cta-footer-text {
