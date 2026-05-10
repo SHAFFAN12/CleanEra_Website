@@ -79,11 +79,7 @@ const OnboardingSection = () => {
             </div>
           ))}
           
-          {/* Decorative Circles */}
-          <div className="decorative-circles">
-            <div className="circle-outline"></div>
-            <div className="circle-outline overlap"></div>
-          </div>
+          
 
           {/* Red Bubble Icon */}
           <img src={bubbleIcon} className="bubble-bg-icon" alt="" />

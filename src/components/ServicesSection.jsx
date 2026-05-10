@@ -318,11 +318,14 @@ const ServicesSection = () => {
           .navy-banner {
             width: 100%;
             border-radius: 0;
-            height: 200px;
-            padding: 0 30px;
+            height: 280px; /* Increased from 200px */
+            padding: 40px 30px;
+            display: flex;
+            align-items: center;
           }
           .banner-title {
-            font-size: 34px;
+            font-size: 32px;
+            line-height: 1.1;
           }
           .cards-slider-wrapper {
             margin-top: 20px;
